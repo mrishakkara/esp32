@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: cloud-code-compiler
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"

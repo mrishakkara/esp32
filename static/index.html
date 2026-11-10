@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLOUD CODE — Online Compiler</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="shell">
+  <header>
+    <div class="brand"><div class="logo">CC</div><div><b>CLOUD CODE</b><small>ONLINE COMPILER</small></div></div>
+    <div class="status"><i></i><span id="status">Sunucu kontrol ediliyor</span></div>
+  </header>
+  <main>
+    <aside>
+      <div class="side-title">WORKSPACE</div>
+      <button class="nav active">▣ &nbsp; Editör</button>
+      <button class="nav" id="newFile">＋ &nbsp; Yeni dosya</button>
+      <div class="side-title space">DERLEME HEDEFİ</div>
+      <label class="target"><input type="radio" name="target" value="cpp" checked><span><b>C++ Compiler</b><small>Wandbox · Çalıştır</small></span></label>
+      <label class="target"><input type="radio" name="target" value="exe"><span><b>Windows EXE</b><small>MinGW-w64 · İndir</small></span></label>
+      <label class="target"><input type="radio" name="target" value="esp"><span><b>ESP32</b><small>Arduino CLI · BIN indir</small></span></label>
+      <div class="side-foot">CLOUD BUILD<br><span>Build environment v1.0</span></div>
+    </aside>
+    <section class="workspace">
+      <div class="toolbar"><div class="crumb">Proje / <b id="filename">main.cpp</b></div><div class="actions"><button id="save" class="ghost">↓ Kaydet</button><button id="build" class="primary">▶ &nbsp; Derle</button></div></div>
+      <div class="editor-head"><span class="dot"></span><span id="editorLabel">main.cpp</span><span class="lang">C++</span></div>
+      <textarea id="code" spellcheck="false" aria-label="Kod editörü">#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Merhaba, CLOUD CODE!";
+    return 0;
+}</textarea>
+      <div class="console">
+        <div class="console-head"><b>TERMINAL / BUILD OUTPUT</b><span id="buildState">HAZIR</span></div>
+        <pre id="output">Derleme çıktısı burada görünecek.
+Bir hedef seç ve Derle butonuna bas.</pre>
+      </div>
+    </section>
+    <aside class="right">
+      <div class="side-title">BUILD DETAILS</div>
+      <div class="detail"><small>PLATFORM</small><b id="platform">C++17 / GCC</b></div>
+      <div class="detail"><small>OUTPUT</small><b id="outputType">Program çıktısı</b></div>
+      <div class="detail"><small>MODE</small><b>Cloud compilation</b></div>
+      <div class="tip"><b>İpucu</b><p>ESP32 için Arduino kodunu <code>setup()</code> ve <code>loop()</code> fonksiyonlarıyla yaz. Hedef kart varsayılan olarak ESP32 Dev Module'dür.</p></div>
+    </aside>
+  </main>
+  <footer><span>● Güvenli bağlantı bekleniyor</span><span>© CLOUD CODE</span></footer>
+</div>
+<script src="/app.js"></script>
+</body></html>
